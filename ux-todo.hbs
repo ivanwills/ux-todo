@@ -1,2 +1,11 @@
 <div class="ux-todo">
+    <h1>TODOs</h1>
+    <ul>
+        {{#each todos:index}}
+        <li>
+            <div class="name">{{.name}}</div>
+            <div class="value">{{.value}}</div>
+        </li>
+        {{/each}}
+    </ul>
 </div>
