@@ -1,7 +1,6 @@
-import ractive from 'ractive';
 import template from './ux-todo.hbs.js';
 
-export default ractive.extend({
+export default Ractive.extend({
     template: template,
     isolated: true,
     data: () => {
