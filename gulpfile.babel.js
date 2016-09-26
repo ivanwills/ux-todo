@@ -15,21 +15,18 @@ gulp.task('hbs', function () {
 
 gulp.task('bundle', ['hbs'], function () {
     return gulp.src('ux-todo.js')
-        .pipe(ractive({
+        .pipe(rollup({
             entry: './ux-todo.js',
             moduleName: 'uxToDo',
             globals: {
                 Ractive: 'Ractive'
             },
-            targets: [
-                { dest: 'index.js', format: 'es' },
-                { dest: 'index.umd.js', format: 'umd' },
-                { dest: 'index.iife.js', format: 'iife' },
-            ]
+            format: 'umd',
+            allowRealFiles: true
         }))
         .pipe(babel({
             "presets": ["es2015"]
         }))
         .pipe(rename({basename: 'index'}))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('.'));
 });

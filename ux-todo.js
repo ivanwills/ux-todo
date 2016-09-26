@@ -13,7 +13,7 @@ export default Ractive.extend({
             ]
         };
     },
-    oninit: () => {
+    oninit: function () {
         this.observe('todos', (newValue) => {
             console.log(newValue);
         });
