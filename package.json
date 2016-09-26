@@ -28,7 +28,9 @@
     "gulp-ractive": "^0.7.1",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.5.0",
-    "gulp-wrap": "^0.13.0",
+    "gulp-wrap": "^0.13.0"
+  },
+  "dependencies": {
     "ractive": "^0.7.3"
   }
 }
