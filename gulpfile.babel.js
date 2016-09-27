@@ -8,21 +8,20 @@ import babel from 'gulp-babel';
 gulp.task('hbs', function () {
     return gulp.src('**/*.hbs')
         .pipe(ractive())
-        .pipe(wrap('export default <%= contents %>;\n'))
+        .pipe(wrap('export default <%= contents %>;\n\n'))
         .pipe(rename({extname: '.hbs.js'}))
         .pipe(gulp.dest('./'));
 });
 
 gulp.task('bundle', ['hbs'], function () {
-    return gulp.src('ux-todo.js')
+    return gulp.src('ux-todo*.js')
         .pipe(rollup({
             entry: './ux-todo.js',
             moduleName: 'uxToDo',
             globals: {
                 Ractive: 'Ractive'
             },
-            format: 'umd',
-            allowRealFiles: true
+            format: 'umd'
         }))
         .pipe(babel({
             "presets": ["es2015"]
