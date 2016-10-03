@@ -15,7 +15,10 @@ gulp.task('hbs', function () {
 });
 
 gulp.task('build', ['hbs'], function () {
-    return gulp.src('ux-todo*.js')
+    return gulp.src([
+            'node_modules/ux-checkbox/ux-checkbox*.js',
+            'ux-todo*.js'
+        ])
         .pipe(rollup({
             entry: './ux-todo.js',
             moduleName: 'uxToDo',

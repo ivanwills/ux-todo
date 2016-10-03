@@ -33,6 +33,7 @@
     "gulp-wrap": "^0.13.0"
   },
   "dependencies": {
-    "ractive": "^0.7.3"
+    "ractive": "^0.7.3",
+    "ux-checkbox": "git+https://github.com/ustop/ux-checkbox.git#master"
   }
 }
