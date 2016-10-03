@@ -1,16 +1,29 @@
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="./node_modules/ractive/ractive.js"></script>
-        <script type="text/javascript" src="./index.js"></script>
-        <script type="text/javascript">
-new Ractive({
-    el: '#todo'
-});
-        </script>
+        <script type="text/javascript" src="./index.umd.js"></script>
     </head>
     <body>
         <div id="todo">
             <ux-todo />
         </div>
+        <script type="text/javascript">
+Ractive.components['ux-todo'] = uxToDo;
+console.log(uxToDo);
+var todo = new Ractive({
+    el: '#todo',
+    template: document.getElementById('todo').innerHTML,
+    data: function () {
+        return {
+            mytodo: true
+        }
+    },
+    onrender: function () {
+        console.log(this.get());
+    }
+});
+console.log(todo);
+        </script>
     </body>
 </html>
