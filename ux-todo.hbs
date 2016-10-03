@@ -3,8 +3,10 @@
     <ul>
         {{#each todos:index}}
         <li>
-            <div class="name">{{.name}}</div>
-            <div class="value">{{.value}}</div>
+            <ux-checkbox
+                label="{{.name}}"
+                checked="{{.checked}}"
+            />
         </li>
         {{/each}}
     </ul>
