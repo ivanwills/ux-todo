@@ -8,18 +8,40 @@ export default Ractive.extend({
         'ux-checkbox': uxCheckbox
     },
     data: () => {
+        var todos = localStorage.getItem('todos');
+        if (todos) {
+            todos = JSON.parse(todos);
+        }
+
         return {
-            todos: [
+            todos: todos || [
                 {
-                    name : 'Milk',
-                    value: 'Get the milk'
+                    checked: false,
+                    text: 'Get the milk'
                 }
             ]
         };
     },
     oninit: function () {
-        this.observe('todos', (newValue) => {
-            console.log(newValue);
+        this.observe('todos', this.saveTodos.bind(this));
+        this.on('addTodo', this.addTodo.bind(this));
+    },
+    saveTodos : (newValue) => {
+        console.log(newValue);
+        if (newValue) {
+            localStorage.setItem('todos', JSON.stringify(newValue));
+        }
+    },
+    addTodo : function () {
+        var newTodo = this.get('newTodo');
+        var todos   = this.get('todos') || [];
+        todos.push({
+            checked: false,
+            text: newTodo
+        });
+        this.set({
+            todos: todos,
+            newTodo: ''
         });
     }
 });

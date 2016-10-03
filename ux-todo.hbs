@@ -4,10 +4,15 @@
         {{#each todos:index}}
         <li>
             <ux-checkbox
-                label="{{.name}}"
                 checked="{{.checked}}"
-            />
+            >
+            <span class={{.checked && 'checked'}}>{{.text}}</span>
+            </ux-checkbox>
         </li>
         {{/each}}
+        <li>
+            <input type="text" value="{{newTodo}}" />
+            <input type="button" value="Add" on-click="addTodo" />
+        </li>
     </ul>
 </div>
