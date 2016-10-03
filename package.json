@@ -29,6 +29,7 @@
     "gulp-ractive": "^0.7.1",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.5.0",
+    "gulp-watch": "^4.3.10",
     "gulp-wrap": "^0.13.0"
   },
   "dependencies": {

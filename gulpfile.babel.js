@@ -1,9 +1,10 @@
+import babel from 'gulp-babel';
 import gulp from 'gulp';
 import ractive from 'gulp-ractive';
 import rename from 'gulp-rename';
-import wrap from 'gulp-wrap';
 import rollup from 'gulp-rollup';
-import babel from 'gulp-babel';
+import watch from 'gulp-watch';
+import wrap from 'gulp-wrap';
 
 gulp.task('hbs', function () {
     return gulp.src('**/*.hbs')
@@ -13,7 +14,7 @@ gulp.task('hbs', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('bundle', ['hbs'], function () {
+gulp.task('build', ['hbs'], function () {
     return gulp.src('ux-todo*.js')
         .pipe(rollup({
             entry: './ux-todo.js',
@@ -28,4 +29,10 @@ gulp.task('bundle', ['hbs'], function () {
         }))
         .pipe(rename({basename: 'index'}))
         .pipe(gulp.dest('.'));
+});
+
+gulp.task('default', function () {
+    return watch(['**/*.hbs', 'ux-todo*.js'], function () {
+       return gulp.tasks[build]();
+   });
 });
