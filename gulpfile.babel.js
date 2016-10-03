@@ -25,7 +25,7 @@ gulp.task('build', ['hbs'], function () {
             globals: {
                 Ractive: 'Ractive'
             },
-            format: 'umd'
+            format: 'iife'
         }))
         .pipe(babel({
             "presets": ["es2015"]
