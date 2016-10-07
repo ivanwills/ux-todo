@@ -27,7 +27,6 @@ export default Ractive.extend({
         this.on('addTodo', this.addTodo.bind(this));
     },
     saveTodos : (newValue) => {
-        console.log(newValue);
         if (newValue) {
             localStorage.setItem('todos', JSON.stringify(newValue));
         }

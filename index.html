@@ -28,7 +28,6 @@
         </div>
         <script type="text/javascript">
 Ractive.components['ux-todo'] = uxToDo;
-console.log(uxToDo);
 var todo = new Ractive({
     el: '#todo',
     template: document.getElementById('todo').innerHTML,
@@ -38,10 +37,8 @@ var todo = new Ractive({
         }
     },
     onrender: function () {
-        console.log(this.get());
     }
 });
-console.log(todo);
         </script>
     </body>
 </html>
