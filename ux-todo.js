@@ -1,4 +1,4 @@
-import template from './ux-todo.hbs.js';
+import template from './ux-todo.hbs';
 import uxCheckbox from './node_modules/ux-checkbox/ux-checkbox.js';
 
 export default Ractive.extend({

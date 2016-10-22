@@ -5,7 +5,7 @@ import rename from 'gulp-rename';
 import rollup from 'gulp-rollup';
 import watch from 'gulp-watch';
 import wrap from 'gulp-wrap';
-import hbs from 'rollup-plugin-ractive-template';
+import rpg from 'rollup-plugin-gulp';
 
 gulp.task('hbs', function () {
     return gulp.src('**/*.hbs')
@@ -23,7 +23,7 @@ gulp.task('build', ['hbs'], function () {
         .pipe(rollup({
             entry: './ux-todo.js',
             plugins: [
-                hbs()
+                rpg(ractive())
             ],
             moduleName: 'uxToDo',
             globals: {

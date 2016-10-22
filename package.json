@@ -26,15 +26,16 @@
     "babel-register": "^6.14.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-ractive": "^0.7.1",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.5.0",
     "gulp-watch": "^4.3.10",
     "gulp-wrap": "^0.13.0"
   },
   "dependencies": {
+    "gulp-ractive": "^0.8.0",
     "ractive": "^0.8.0",
-    "ux-checkbox": "git+https://github.com/ustop/ux-checkbox.git#master",
-    "rollup-plugin-ractive-template": "https://github.com/ustop/rollup-plugin-ractive-template.git"
+    "rollup-plugin-gulp": "^1.0.0",
+    "rollup-plugin-ractive-template": "https://github.com/ustop/rollup-plugin-ractive-template.git",
+    "ux-checkbox": "git+https://github.com/ustop/ux-checkbox.git#master"
   }
 }
